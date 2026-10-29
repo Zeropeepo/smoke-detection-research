@@ -30,6 +30,30 @@ Bobot COCO ini merupakan asumsi inisialisasi; sumber dan versi bobot awal yang b
 
 Notebook tidak memulai training hanya karena dibuka. Run selesai dilewati ketika dijalankan ulang; run parsial dengan `last.pt` dicoba dilanjutkan. Folder parsial tanpa checkpoint dihentikan untuk ditinjau. Output dengan konfigurasi berbeda tidak akan ditimpa; pilih folder output baru untuk eksperimen baru.
 
+## Menjalankan dari terminal dengan nohup
+
+`run_hpc.py` memakai paket yang sudah tersedia di environment, termasuk `tqdm`; tidak ada instalasi otomatis. Masuk ke folder ini dan aktifkan environment HPC yang sesuai. Ganti setiap contoh path serta urutan `--smoke-classes` sesuai label yang sudah diverifikasi; urutan argumen adalah ID 0 lalu ID 1. Pastikan kedua dataset dan seluruh bobot yang diperlukan tersedia sebelum memulai. Pertama jalankan audit:
+
+```bash
+python -u run_hpc.py --mode audit \
+  --smoke-root /path/ke/Smoke_and_Fire --dfire-root /path/ke/DFire \
+  --weights-dir /path/ke/weights --output-root /path/ke/outputs/fire2025 \
+  --smoke-classes fire smoke
+```
+
+Setelah audit dan label diperiksa, jalankan seluruh 13 eksperimen dalam alokasi GPU yang sah:
+
+```bash
+nohup python -u run_hpc.py --mode train \
+  --smoke-root /path/ke/Smoke_and_Fire --dfire-root /path/ke/DFire \
+  --weights-dir /path/ke/weights --output-root /path/ke/outputs/fire2025 \
+  --smoke-classes fire smoke > fire2025.log 2>&1 &
+echo $!
+tail -f fire2025.log
+```
+
+Contoh `fire smoke` hanya ilustrasi, bukan urutan kelas yang telah diverifikasi. Tambahkan `--run-ids t4_yolo11n_50` untuk menjalankan satu eksperimen lebih dulu. Jalankan ulang perintah yang sama setelah terputus: hasil lengkap dilewati dan checkpoint parsial dicoba dilanjutkan. Jangan jalankan dua proses terhadap folder output yang sama. `tqdm` menunjukkan jumlah eksperimen yang selesai; Ultralytics menampilkan progres epoch/batch sesuai versinya. Dalam log `nohup`, karakter carriage return dapat membuat progress bar tampak berulang. Jika HPC memakai scheduler, jalankan perintah dalam job GPU yang dialokasikan; `nohup` tidak menggantikan scheduler dan proses tetap tunduk pada batas waktu job. `--device` menggunakan indeks GPU yang terlihat dalam `CUDA_VISIBLE_DEVICES`.
+
 ## Cakupan dan asumsi
 
 - Tabel 4: YOLOv9t, YOLOv10n, YOLO11n pada 50 dan 100 epoch, batch 16, Adam. Ukuran 640 dan pemakaian dataset Smoke and Fire adalah interpretasi dari konteks paper; Tabel 3 tidak menjabarkan semua parameter.

@@ -1,0 +1,7 @@
+Model,Kondisi,precision,recall,map50,map50_95
+yolo11n,Full 376 (eksploratif),50.5,44.32,38.63,16.88
+yolo11n,Test sebelum adaptation,36.05,44.33,31.86,15.49
+yolo11n,Test setelah adaptation,52.9,50.79,44.11,23.27
+yolo26n,Full 376 (eksploratif),45.69,44.15,38.59,17.19
+yolo26n,Test sebelum adaptation,40.27,40.0,38.22,17.44
+yolo26n,Test setelah adaptation,56.97,47.0,48.89,21.74

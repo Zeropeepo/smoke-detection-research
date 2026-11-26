@@ -1,0 +1,26 @@
+{
+  "weights": "/kaggle/working/karhutla_review_20261123_074600_267079/results_adapt/yolo26n/training/weights/best.pt",
+  "weights_sha256": "bcda43976400772160e85bf7240c2bbb96390f0593d8ba52622f179a60241052",
+  "dataset_yaml": "/kaggle/working/karhutla_review_20261123_074600_267079/prepared/split/data.yaml",
+  "split": "test",
+  "imgsz": 640,
+  "ultralytics_version": "8.4.192",
+  "precision": 0.5696589003014167,
+  "recall": 0.4699650192217958,
+  "map50": 0.48892388553821103,
+  "map50_95": 0.21735584132863933,
+  "per_class": {
+    "smoke": {
+      "ap50": 0.7147079650766202,
+      "ap50_95": 0.3131574858276033,
+      "precision": 0.7665529316084916,
+      "recall": 0.6776349564763784
+    },
+    "fire": {
+      "ap50": 0.2631398059998019,
+      "ap50_95": 0.12155419682967541,
+      "precision": 0.3727648689943419,
+      "recall": 0.26229508196721313
+    }
+  }
+}

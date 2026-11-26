@@ -1,0 +1,26 @@
+{
+  "weights": "/kaggle/working/karhutla_domain_dua_model_20261121_084317/results_adapt/yolov9t/training/weights/best.pt",
+  "weights_sha256": "fef8e38ebdfb4f90a48a4e84649d95c4ec2ac863f55e1b12d602c9a38768654b",
+  "dataset_yaml": "/kaggle/working/karhutla_domain_dua_model_20261121_084317/prepared/split/data.yaml",
+  "split": "test",
+  "imgsz": 640,
+  "ultralytics_version": "8.4.192",
+  "precision": 0.6705495638717062,
+  "recall": 0.46396044756700494,
+  "map50": 0.5032891483501524,
+  "map50_95": 0.262667150889564,
+  "per_class": {
+    "smoke": {
+      "ap50": 0.7342220808169087,
+      "ap50_95": 0.3835269370555926,
+      "precision": 0.8101651049872556,
+      "recall": 0.6984126984126984
+    },
+    "fire": {
+      "ap50": 0.27235621588339615,
+      "ap50_95": 0.14180736472353547,
+      "precision": 0.5309340227561568,
+      "recall": 0.22950819672131148
+    }
+  }
+}

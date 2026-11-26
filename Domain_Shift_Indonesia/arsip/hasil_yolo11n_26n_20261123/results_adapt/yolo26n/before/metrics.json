@@ -1,0 +1,26 @@
+{
+  "weights": "/kaggle/input/datasets/windy25/karhutla-source-yolo11n-yolo26n-checkpoints/yolo26n_source_best.pt",
+  "weights_sha256": "607a9e7092eed59ed8b1e313380fdc4e23dba47094b77090b6011ed574aa2183",
+  "dataset_yaml": "/kaggle/working/karhutla_review_20261123_074600_267079/prepared/split/data.yaml",
+  "split": "test",
+  "imgsz": 640,
+  "ultralytics_version": "8.4.192",
+  "precision": 0.4027462703170348,
+  "recall": 0.3999531472782385,
+  "map50": 0.3821665883978145,
+  "map50_95": 0.1743633512396886,
+  "per_class": {
+    "smoke": {
+      "ap50": 0.6244289537727685,
+      "ap50_95": 0.276898003514313,
+      "precision": 0.6183660751694333,
+      "recall": 0.5658861793002499
+    },
+    "fire": {
+      "ap50": 0.13990422302286046,
+      "ap50_95": 0.07182869896506425,
+      "precision": 0.18712646546463624,
+      "recall": 0.23402011525622718
+    }
+  }
+}

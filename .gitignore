@@ -1,0 +1,13 @@
+# Python/Jupyter runtime
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+
+# Local training outputs and checkpoints
+outputs/
+runs/
+*.pt
+
+# OS/editor files
+.DS_Store

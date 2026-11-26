@@ -1,0 +1,26 @@
+{
+  "weights": "/kaggle/input/datasets/windy25/karhutla-yolov9t-experiment-inputs/yolov9t_smoke_fire_best.pt",
+  "weights_sha256": "0ad7687a729caa42cd0c0ad9b470b9ce42851a68aae25b30fec737056da1d2de",
+  "dataset_yaml": "/kaggle/working/karhutla_domain_dua_model_20261121_084317/prepared/split/data.yaml",
+  "split": "test",
+  "imgsz": 640,
+  "ultralytics_version": "8.4.192",
+  "precision": 0.3664764760084276,
+  "recall": 0.38381472807702316,
+  "map50": 0.3113316892376511,
+  "map50_95": 0.1476906865661855,
+  "per_class": {
+    "smoke": {
+      "ap50": 0.5356669441638059,
+      "ap50_95": 0.2645352807657246,
+      "precision": 0.5541472373392731,
+      "recall": 0.5873015873015873
+    },
+    "fire": {
+      "ap50": 0.08699643431149626,
+      "ap50_95": 0.030846092366646354,
+      "precision": 0.17880571467758216,
+      "recall": 0.18032786885245902
+    }
+  }
+}

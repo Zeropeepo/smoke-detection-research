@@ -1,0 +1,13 @@
+{
+  "test_images": 59,
+  "verified_same_image_hashes": true,
+  "verified_same_label_hashes": true,
+  "verification": "SHA-256 files within two Kaggle output archives; 59/59 images and annotations match",
+  "source_checkpoints": {
+    "yolov9t": "0ad7687a729caa42cd0c0ad9b470b9ce42851a68aae25b30fec737056da1d2de",
+    "yolov10n": "91e74e2fb8a32fc2eba3ecd6f5a71478b529c67888809ef829b5107ad3a32cd9",
+    "yolo11n": "753fc5a7e6e0ee4b7754ad7593473d8e83113175bf3a9bb525e7b73d4696dab1",
+    "yolo26n": "607a9e7092eed59ed8b1e313380fdc4e23dba47094b77090b6011ed574aa2183"
+  },
+  "note": "Training configurations differ; no claim of independent events. Runs are exploratory."
+}

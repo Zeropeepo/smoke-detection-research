@@ -20,7 +20,7 @@ Ini menyamakan **fine-tuning pada data Indonesia**. Bobot awal empat model tetap
 
 ## Menjalankan di Kaggle
 
-1. Notebook Kaggle menggunakan dataset Indonesia, empat checkpoint sumber, dan runner sebagai inputs privat.
+1. Notebook Kaggle menggunakan dataset Indonesia dan empat checkpoint sebagai inputs privat; salinan runner disertakan di notebook agar path input runner tidak rapuh.
 2. Notebook memasang Ultralytics bila image Kaggle belum memilikinya, lalu mencatat versi paket dan GPU sebelum run.
 3. Jalankan notebook eksperimen secara berurutan; runner menyimpan evaluasi, training, hash data/split, checkpoint, konfigurasi, dan ringkasan hasil.
 4. Untuk analisis visual terpisah, set `KARHUTLA_RUN_DIR` ke folder hasil dan `KARHUTLA_IMAGES_DIR` ke `combined_manual_review`, lalu jalankan notebook 02.

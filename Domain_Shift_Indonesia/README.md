@@ -5,6 +5,7 @@ Eksperimen ini membandingkan empat checkpoint sumber dan supervised fine-tuning 
 ## Mulai di sini
 
 - [`01_eksperimen_domain_shift.ipynb`](01_eksperimen_domain_shift.ipynb): persiapan split, pemanggilan runner, tiga evaluasi, dan ringkasan.
+- [`kaggle/karhutla-yolo11n-yolo26n-adaptation-review.ipynb`](kaggle/karhutla-yolo11n-yolo26n-adaptation-review.ipynb): run matched empat model dan visual error analysis; memasang Ultralytics bila belum tersedia di image Kaggle.
 - [`02_analisis_kesalahan.ipynb`](02_analisis_kesalahan.ipynb): visualisasi before/after empat model, kasus FN/FP, ukuran objek, dan indikator bbox yang terlewat.
 - [`../scripts/Domain_Shift_Indonesia/run_experiments.py`](../scripts/Domain_Shift_Indonesia/run_experiments.py): runner Python sequential dengan pencatatan konfigurasi/hash, skip tahap yang selesai, dan resume dari `last.pt`.
 - [`analisis_lanjutan/`](analisis_lanjutan/): helper dan unit test analisis bbox saja.
@@ -19,9 +20,9 @@ Ini menyamakan **fine-tuning pada data Indonesia**. Bobot awal empat model tetap
 
 ## Menjalankan di Kaggle
 
-1. Notebook privat Kaggle menggunakan dataset Indonesia, empat checkpoint sumber, dan runner sebagai inputs.
-2. Sesuaikan path input jika memakai dataset lain.
-3. Jalankan notebook 01. Runner menulis evaluasi, training, hash data/split, checkpoint, konfigurasi, dan `ringkasan_tiga_evaluasi.csv` ke folder run.
+1. Notebook Kaggle menggunakan dataset Indonesia, empat checkpoint sumber, dan runner sebagai inputs privat.
+2. Notebook memasang Ultralytics bila image Kaggle belum memilikinya, lalu mencatat versi paket dan GPU sebelum run.
+3. Jalankan notebook eksperimen secara berurutan; runner menyimpan evaluasi, training, hash data/split, checkpoint, konfigurasi, dan ringkasan hasil.
 4. Untuk analisis visual terpisah, set `KARHUTLA_RUN_DIR` ke folder hasil dan `KARHUTLA_IMAGES_DIR` ke `combined_manual_review`, lalu jalankan notebook 02.
 
 Runner menggunakan GPU dan versi Ultralytics yang tersedia. Jika run terputus, jalankan ulang dengan folder output sama; tahap lengkap dilewati dan training parsial dilanjutkan dari `last.pt`. Untuk perubahan data/config, gunakan folder output baru. Jalankan model secara berurutan agar tidak berebut GPU.
